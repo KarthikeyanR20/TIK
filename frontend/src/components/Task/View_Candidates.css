@@ -1,0 +1,61 @@
+/* Container */
+.candidates-container {
+  padding: 40px 60px;
+}
+
+/* Title */
+.candidates-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Card */
+.candidate-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: 0.2s;
+}
+
+/* Hover effect */
+.candidate-card:hover {
+  transform: translateY(-3px);
+  background: #fffaf1;
+}
+
+/* Text */
+.candidate-card p {
+  margin: 6px 0;
+  font-size: 15px;
+  color: #444;
+}
+
+/* Labels */
+.candidate-card b {
+  color: #000;
+}
+
+/* Resume link */
+.resume-link {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #b28735;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.resume-link:hover {
+  color: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .candidates-container {
+    padding: 20px;
+  }
+}

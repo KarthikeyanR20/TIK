@@ -1,0 +1,106 @@
+.join-container {
+    background-color: #ffffff;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.join-container h2 {
+    text-align: center;
+    font-size: 30px;
+    color: #2b2b2b;
+    margin-bottom: 10px;
+}
+
+.subText {
+    text-align: center;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.benefits h3 {
+    color: #c8a96a;
+    margin-bottom: 10px;
+}
+
+.benefits ul {
+    padding-left: 0;
+    margin-bottom: 25px;
+}
+
+.benefits ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+    color: #444;
+}
+
+.benefits ul li::before {
+    content: "✔";
+    color: #c8a96a;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form input {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    transition: 0.2s ease;
+}
+
+.form input:hover {
+    border-color: #c8a96a;
+}
+
+.form input:focus {
+    border-color: #c8a96a;
+    outline: none;
+    box-shadow: 0 0 6px rgba(200, 169, 106, 0.3)
+}
+
+.form input[type="file"] {
+    border: none;
+}
+
+.form button {
+    background: linear-gradient(135deg, #c8a96a, #b89658);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s ease;
+    box-shadow: 0 6px 15px rgba(200, 169, 106, 0.3);
+}
+
+.form button:active {
+    transform: scale(0.97);
+}
+
+.note {
+    margin-top: 15px;
+    text-align: center;
+    color: #555;
+    font-size: 14px;
+}
+
+.disclaimer {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 13px;
+    color: #999;
+}

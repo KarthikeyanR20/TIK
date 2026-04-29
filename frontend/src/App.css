@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #fffaf1;
+}
+
+.container {
+  padding: 20px 60px;
+  margin-top: 15px;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  width: 180px;
+}
+
+.navigation {
+  margin: 0 20px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 20px 20px;
+}
+
+.navigation:hover {
+  color: #000;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+.login,
+.join {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px;
+  margin-right: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.login {
+  background-color: #e6dfd6;
+  color: #333;
+}
+
+.login:hover {
+  background-color: #d6cec3;
+}
+
+.join {
+  background-color: #b28735;
+  color: #ffffff;
+}
+
+.join:hover {
+  background-color: #000;
+}
+
+@media (max-width: 768px) {
+  .navBar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navigation {
+    padding: 10px 0;
+  }
+
+  .content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .left-content h1 {
+    font-size: 40px;
+  }
+
+  .right-content img {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .job-container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .service-list {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+  }
+}

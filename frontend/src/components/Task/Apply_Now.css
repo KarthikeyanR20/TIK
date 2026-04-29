@@ -1,0 +1,88 @@
+.apply-container {
+    display: flex;
+    gap: 40px;
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;  
+    align-items: center;  
+}
+
+/* LEFT SIDE */
+.left-section {
+    flex: 1;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    align-items: center;       
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    min-width: 450px;
+    height: 400px;
+}
+
+.job-image {
+    width: 180px;
+    margin-bottom: 20px;
+    border-radius: 40px;
+}
+
+.left-section h2 {
+    font-size: 22px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* RIGHT SIDE */
+.right-section {
+    flex: 2;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* FORM */
+.apply-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.apply-form input,
+.apply-form select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    outline: none;
+}
+
+.apply-form input:focus,
+.apply-form select:focus {
+    border-color: #b28735;
+}
+
+/* BUTTON (matching your JOIN button style) */
+.apply-form button {
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    background-color: #b28735;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 180px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.apply-form button:hover {
+    background-color: #000;
+}
