@@ -1,5 +1,5 @@
 import "./App.css"
-import React from 'react'
+import React, { useState } from 'react'
 import Home from './components/Task/Home'
 import Find_Jobs from "./components/Task/Find_Jobs"
 import Services from "./components/Task/Services"
@@ -9,12 +9,14 @@ import Login from "./components/Task/Login"
 import Join_Us from "./components/Task/Join_Us"
 import Footer from "./components/Task/Footer"
 import Logo from './components/Images/Logo.png'
-import { BrowserRouter as Router, Route, Routes, Link, useNavigate } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
 import View_Candidates from "./components/Task/View_Candidates";
 import Apply_Now from "./components/Task/Apply_Now";
 import View_Application from "./components/Task/View_Application";
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <>
       <Router>
@@ -22,22 +24,33 @@ function App() {
           <div className="container">
             <header className="navBar">
               <div className="logo">
-                <Link to="/"><img src={Logo} alt="TIK_Logo" /></Link>
+                <Link to="/" onClick={() => setMenuOpen(false)}>
+                  <img src={Logo} alt="TIK_Logo" />
+                </Link>
               </div>
 
-              <nav>
-                <Link to="/" className="navigation">Home</Link>
-                <Link to="/Find_Jobs" className="navigation">Find Jobs</Link>
-                <Link to="/Services" className="navigation">Services</Link>
-                <Link to="/About" className="navigation">About</Link>
-                <Link to="/Contact_Us" className="navigation">Contact Us</Link>
+              <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+
+              <nav className={menuOpen ? "nav-open" : ""}>
+                <Link to="/" className="navigation" onClick={() => setMenuOpen(false)}>Home</Link>
+                <Link to="/Find_Jobs" className="navigation" onClick={() => setMenuOpen(false)}>Find Jobs</Link>
+                <Link to="/Services" className="navigation" onClick={() => setMenuOpen(false)}>Services</Link>
+                <Link to="/About" className="navigation" onClick={() => setMenuOpen(false)}>About</Link>
+                <Link to="/Contact_Us" className="navigation" onClick={() => setMenuOpen(false)}>Contact Us</Link>
+                <div className="buttons mobile-buttons">
+                  <Link to="/Login" className="login" onClick={() => setMenuOpen(false)}>Log In</Link>
+                  <Link to="/Join_Us" className="join" onClick={() => setMenuOpen(false)}>Join Us</Link>
+                </div>
               </nav>
 
-              <div className="buttons">
+              <div className="buttons desktop-buttons">
                 <Link to="/Login" className="login">Log In</Link>
                 <Link to="/Join_Us" className="join">Join Us</Link>
               </div>
-
             </header>
           </div>
 
@@ -54,7 +67,7 @@ function App() {
             <Route path="/application" element={<View_Application />} />
           </Routes>
         </div>
-        <Footer></Footer>
+        <Footer />
       </Router>
     </>
   )

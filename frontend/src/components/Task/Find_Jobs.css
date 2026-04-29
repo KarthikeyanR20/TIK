@@ -1,55 +1,79 @@
 .job-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    padding: 60px 80px;
-    background: #f8f6f2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 50px 60px;
+  background: #f8f6f2;
 }
 
 .card {
-    background: #ffffff;
-    border: 1px solid #eee;
-    border-radius: 20px;
-    padding: 25px;
-    text-align: center;
-    cursor: pointer;
+  background: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
 }
 
 .job-logo {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-    margin-bottom: 20px;
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin-bottom: 16px;
 }
 
 .card h2 {
-    font-size: 18px;
-    font-weight: 500;
-    color: #222;
-    margin-bottom: 10px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 8px;
 }
 
 .card p {
-    font-size: 14px;
-    color: #777;
-    margin-bottom: 25px;
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 20px;
 }
 
 .button {
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    background: #c8a96a;
-    width: 50px;
-    height: 50px;
-    padding: 16px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #c8a96a;
+  width: 48px;
+  height: 48px;
+  padding: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button img {
-    width: 15px;
-    filter: invert(1);
+  width: 14px;
+  filter: invert(1);
 }
 
 .button:hover {
-    background: #a8823f;
+  background: #a8823f;
+}
+
+@media (max-width: 768px) {
+  .job-container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 30px 16px;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .job-container {
+    grid-template-columns: 1fr;
+    padding: 20px 16px;
+  }
 }
