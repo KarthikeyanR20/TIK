@@ -15,14 +15,14 @@
 .subText {
   color: #777;
   font-size: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
 }
 
 .contact_info {
   background: #f8f6f2;
   border-radius: 12px;
   padding: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .contact_info p {
