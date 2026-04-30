@@ -1,58 +1,56 @@
 .service-container {
   background-color: #f8f6f2;
-  padding: 40px 20px;
+  padding: 60px;
   text-align: center;
 }
 
 h1 {
   color: #2b2b2b;
-  font-size: 26px;
-  margin-bottom: 30px;
+  font-size: 32px;
+  margin-bottom: 40px;
 }
 
 .service-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 24px;
   max-width: 1100px;
   margin: 0 auto;
 }
 
 .lists {
   background-color: #ffffff;
-  border-radius: 12px;
+  border-radius: 15px;
   text-align: left;
-  padding: 20px;
+  padding: 25px;
   cursor: pointer;
   transition: 0.3s;
   border: 1px solid #eee;
 }
 
 .lists:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   border-color: #c8a96a;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
 .lists h2 {
-  font-size: 15px;
+  font-size: 17px;
   color: #222;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .lists p {
-  font-size: 13px;
+  font-size: 14px;
   color: #666;
   line-height: 1.6;
 }
 
-@media (max-width: 900px) {
-  .service-list {
-    grid-template-columns: 1fr 1fr;
+@media (max-width: 768px) {
+  .service-container {
+    padding: 40px 20px;
   }
-}
 
-@media (max-width: 480px) {
   .service-list {
     grid-template-columns: 1fr;
   }
