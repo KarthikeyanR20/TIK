@@ -1,48 +1,48 @@
 .contact {
-  max-width: 600px;
+  max-width: 500px;
   margin: 0 auto;
-  padding: 60px 40px;
+  padding: 40px 20px;
   text-align: center;
 }
 
 .contact h2 {
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 700;
   color: #1a1a1a;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .subText {
   color: #777;
-  font-size: 15px;
-  margin-bottom: 30px;
+  font-size: 14px;
+  margin-bottom: 24px;
 }
 
 .contact_info {
   background: #f8f6f2;
   border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 30px;
+  padding: 16px;
+  margin-bottom: 24px;
 }
 
 .contact_info p {
-  margin: 8px 0;
-  font-size: 15px;
+  margin: 6px 0;
+  font-size: 14px;
   color: #444;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 14px 16px;
+  padding: 12px 14px;
   border: 1px solid #ddd;
   border-radius: 10px;
-  font-size: 15px;
+  font-size: 14px;
   font-family: "Poppins", sans-serif;
   background: #fff;
   outline: none;
@@ -59,8 +59,8 @@
   color: white;
   border: none;
   border-radius: 30px;
-  padding: 14px;
-  font-size: 16px;
+  padding: 13px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
@@ -68,14 +68,4 @@
 
 .contact-form button:hover {
   background: #000;
-}
-
-@media (max-width: 768px) {
-  .contact {
-    padding: 40px 20px;
-  }
-
-  .contact h2 {
-    font-size: 24px;
-  }
 }
