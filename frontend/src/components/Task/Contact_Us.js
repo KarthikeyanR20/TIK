@@ -8,7 +8,7 @@ function Contact_Us() {
                 <h2>Contact Us</h2>
                 <p className='subText'>We’d love to hear from you. Reach out to us anytime.</p>
                 <div className='contact_info'>
-                    <p>+91 XXXXX XXXXX</p>
+                    <p>+91 80561 13955</p>
                     <p>info@tikhr.com</p>
                     <p>Chennai, India</p>
                 </div>
