@@ -76,4 +76,8 @@
     grid-template-columns: 1fr;
     padding: 20px 16px;
   }
+
+  .card {
+    padding: 18px;
+  }
 }

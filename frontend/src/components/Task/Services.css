@@ -52,6 +52,12 @@ h1 {
   }
 
   .service-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .service-list {
     grid-template-columns: 1fr;
   }
 }
