@@ -1,81 +1,99 @@
 const express = require("express");
 const cors = require("cors");
 const multer = require("multer");
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+const path = require("path");
 const fs = require("fs");
+
+dotenv.config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// create file if not exists
-if (!fs.existsSync("data.json")) {
-  fs.writeFileSync("data.json", "[]");
+// Connect to MongoDB
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log("✅ MongoDB connected"))
+  .catch(err => console.error("❌ MongoDB error:", err));
+
+// Create uploads folder if not exists
+if (!fs.existsSync("uploads")) {
+  fs.mkdirSync("uploads");
 }
 
-// storage
+// Multer storage
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "uploads/");
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + "-" + file.originalname);
+  destination: (req, file, cb) => cb(null, "uploads/"),
+  filename: (req, file, cb) => cb(null, Date.now() + "-" + file.originalname)
+});
+const upload = multer({ storage });
+
+// Schemas
+const candidateSchema = new mongoose.Schema({
+  name: String,
+  qualification: String,
+  passedout: String,
+  experience: String,
+  jobTitle: String,
+  contact: String,
+  email: String,
+  referral: String,
+  resume: String,
+  createdAt: { type: Date, default: Date.now }
+});
+
+const joinSchema = new mongoose.Schema({
+  name: String,
+  contact: String,
+  email: String,
+  qualification: String,
+  experience: String,
+  role: String,
+  location: String,
+  resume: String,
+  createdAt: { type: Date, default: Date.now }
+});
+
+const Candidate = mongoose.model("Candidate", candidateSchema);
+const JoinCandidate = mongoose.model("JoinCandidate", joinSchema);
+
+// ✅ APPLY NOW - Save candidate
+app.post("/upload", upload.single("resume"), async (req, res) => {
+  try {
+    const newCandidate = new Candidate({
+      name: req.body.name,
+      qualification: req.body.qualification,
+      passedout: req.body.passedout,
+      experience: req.body.experience,
+      jobTitle: req.body.jobTitle,
+      contact: req.body.contact,
+      email: req.body.email,
+      referral: req.body.referral || "N/A",
+      resume: req.file ? req.file.filename : ""
+    });
+    await newCandidate.save();
+    res.json({ message: "Saved successfully" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Error saving candidate" });
   }
 });
 
-const upload = multer({ storage });
-
-// ✅ SAVE DATA
-app.post("/upload", upload.single("resume"), (req, res) => {
-
-  const newCandidate = {
-    name: req.body.name,
-    qualification: req.body.qualification,
-    passedout: req.body.passedout,
-    experience: req.body.experience,
-    jobTitle: req.body.jobTitle,
-    contact: req.body.contact,
-    email: req.body.email,
-    referral: req.body.referral || "N/A",
-    resume: req.file ? req.file.filename : ""
-  };
-
-  const data = JSON.parse(fs.readFileSync("data.json"));
-
-  data.push(newCandidate);
-
-  fs.writeFileSync("data.json", JSON.stringify(data, null, 2));
-
-  res.json({ message: "Saved successfully" });
-});
-
-// ✅ GET DATA
-app.get("/candidates", (req, res) => {
-  const data = JSON.parse(fs.readFileSync("data.json"));
-  res.json(data);
-});
-
-// static resume access
-app.use("/uploads", express.static("uploads"));
-
-app.listen(8000, () => {
-  console.log("Server running on port 8000 🚀");
-});
-
-// create file if not exists
-if (!fs.existsSync("joinData.json")) {
-  fs.writeFileSync("joinData.json", "[]");
-}
-
-// submit join form
-// create joinData.json if not exists
-if (!fs.existsSync("joinData.json")) {
-  fs.writeFileSync("joinData.json", "[]");
-}
-
-// ✅ JOIN FORM SUBMIT (WITH FILE UPLOAD)
-app.post("/join", upload.single("resume"), (req, res) => {
+// ✅ GET Apply Now candidates
+app.get("/candidates", async (req, res) => {
   try {
-    const newCandidate = {
+    const data = await Candidate.find().sort({ createdAt: -1 });
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ message: "Error fetching candidates" });
+  }
+});
+
+// ✅ JOIN US - Save candidate
+app.post("/join", upload.single("resume"), async (req, res) => {
+  try {
+    const newCandidate = new JoinCandidate({
       name: req.body.name,
       contact: req.body.contact,
       email: req.body.email,
@@ -84,28 +102,27 @@ app.post("/join", upload.single("resume"), (req, res) => {
       role: req.body.role,
       location: req.body.location,
       resume: req.file ? req.file.filename : ""
-    };
-
-    const data = JSON.parse(fs.readFileSync("joinData.json"));
-
-    data.push(newCandidate);
-
-    fs.writeFileSync("joinData.json", JSON.stringify(data, null, 2));
-
+    });
+    await newCandidate.save();
     res.json({ message: "Join data saved successfully" });
-
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Error saving data" });
   }
 });
 
-// ✅ GET JOIN CANDIDATES
-app.get("/join-candidates", (req, res) => {
+// ✅ GET Join candidates
+app.get("/join-candidates", async (req, res) => {
   try {
-    const data = JSON.parse(fs.readFileSync("joinData.json"));
+    const data = await JoinCandidate.find().sort({ createdAt: -1 });
     res.json(data);
   } catch (err) {
     res.status(500).json({ message: "Error fetching data" });
   }
 });
+
+// Static resume access
+app.use("/uploads", express.static("uploads"));
+
+const PORT = process.env.PORT || 8000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT} 🚀`));
