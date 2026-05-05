@@ -37,7 +37,6 @@ function Find_Jobs() {
                         <img src={job.logo} alt='logo' className='job-logo'></img>
                         <h2>{job.title}</h2>
                         <p>Apply Now</p>
-                        {/* <button className='button'><img src={Arrow} alt='arrow' className='arrow'></img></button> */}
                         <Link
                             to="/Apply_Now"
                             state={{ job, jobs }}

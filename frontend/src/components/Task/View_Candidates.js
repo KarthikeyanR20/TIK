@@ -14,10 +14,8 @@ function View_Candidates() {
   return (
     <div className="candidates-container">
       <h2 className="candidates-title">Join Us Candidates</h2>
-
       {candidates.map((c, index) => (
         <div key={index} className="candidate-card">
-
           <p><b>Name:</b> {c.name}</p>
           <p><b>Email:</b> {c.email}</p>
           <p><b>Contact:</b> {c.contact}</p>
@@ -25,16 +23,14 @@ function View_Candidates() {
           <p><b>Experience:</b> {c.experience}</p>
           <p><b>Role:</b> {c.role}</p>
           <p><b>Location:</b> {c.location}</p>
-
           <a
-            href={`${process.env.REACT_APP_API_URL}/uploads/${c.resume}`}
+            href={c.resume}
             target="_blank"
             rel="noreferrer"
             className="resume-link"
           >
             📄 View Resume
           </a>
-
         </div>
       ))}
     </div>

@@ -3,8 +3,8 @@ const cors = require("cors");
 const multer = require("multer");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const path = require("path");
-const fs = require("fs");
+const { v2: cloudinary } = require("cloudinary");
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
 
 dotenv.config();
 
@@ -12,24 +12,26 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log("✅ MongoDB connected"))
   .catch(err => console.error("❌ MongoDB error:", err));
 
-// Create uploads folder if not exists
-if (!fs.existsSync("uploads")) {
-  fs.mkdirSync("uploads");
-}
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+});
 
-// Multer storage
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, "uploads/"),
-  filename: (req, file, cb) => cb(null, Date.now() + "-" + file.originalname)
+const storage = new CloudinaryStorage({
+  cloudinary,
+  params: {
+    folder: "tik-hr-resumes",
+    resource_type: "raw",
+    allowed_formats: ["pdf", "doc", "docx", "jpg", "png"]
+  }
 });
 const upload = multer({ storage });
 
-// Schemas
 const candidateSchema = new mongoose.Schema({
   name: String,
   qualification: String,
@@ -58,7 +60,6 @@ const joinSchema = new mongoose.Schema({
 const Candidate = mongoose.model("Candidate", candidateSchema);
 const JoinCandidate = mongoose.model("JoinCandidate", joinSchema);
 
-// ✅ APPLY NOW - Save candidate
 app.post("/upload", upload.single("resume"), async (req, res) => {
   try {
     const newCandidate = new Candidate({
@@ -70,7 +71,7 @@ app.post("/upload", upload.single("resume"), async (req, res) => {
       contact: req.body.contact,
       email: req.body.email,
       referral: req.body.referral || "N/A",
-      resume: req.file ? req.file.filename : ""
+      resume: req.file ? req.file.path : ""
     });
     await newCandidate.save();
     res.json({ message: "Saved successfully" });
@@ -80,7 +81,6 @@ app.post("/upload", upload.single("resume"), async (req, res) => {
   }
 });
 
-// ✅ GET Apply Now candidates
 app.get("/candidates", async (req, res) => {
   try {
     const data = await Candidate.find().sort({ createdAt: -1 });
@@ -90,7 +90,6 @@ app.get("/candidates", async (req, res) => {
   }
 });
 
-// ✅ JOIN US - Save candidate
 app.post("/join", upload.single("resume"), async (req, res) => {
   try {
     const newCandidate = new JoinCandidate({
@@ -101,7 +100,7 @@ app.post("/join", upload.single("resume"), async (req, res) => {
       experience: req.body.experience,
       role: req.body.role,
       location: req.body.location,
-      resume: req.file ? req.file.filename : ""
+      resume: req.file ? req.file.path : ""
     });
     await newCandidate.save();
     res.json({ message: "Join data saved successfully" });
@@ -111,7 +110,6 @@ app.post("/join", upload.single("resume"), async (req, res) => {
   }
 });
 
-// ✅ GET Join candidates
 app.get("/join-candidates", async (req, res) => {
   try {
     const data = await JoinCandidate.find().sort({ createdAt: -1 });
@@ -120,9 +118,6 @@ app.get("/join-candidates", async (req, res) => {
     res.status(500).json({ message: "Error fetching data" });
   }
 });
-
-// Static resume access
-app.use("/uploads", express.static("uploads"));
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT} 🚀`));
