@@ -33,6 +33,7 @@ function Find_Jobs() {
         <>
             <div className='job-container'>
                 {jobs.map((job, index) => (
+                  <Link to="/Apply_Now" state={{ job, jobs }} className='jobs'>   
                     <div className='card' key={index}>
                         <img src={job.logo} alt='logo' className='job-logo'></img>
                         <h2>{job.title}</h2>
@@ -45,6 +46,7 @@ function Find_Jobs() {
                             <img src={Arrow} alt='arrow' className='arrow' />
                         </Link>
                     </div>
+                    </Link>
                 ))}
 
             </div>
