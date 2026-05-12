@@ -66,7 +66,7 @@ function App() {
             <Route path="/candidates" element={<View_Candidates />} />
             <Route path="/Apply_Now" element={<Apply_Now />} />
             <Route path="/application" element={<View_Application />} />
-            <Route path="/View_Messages" element={<View_Messages />} />
+            <Route path="/messages" element={<View_Messages />} />
           </Routes>
         </div>
         <Footer />
