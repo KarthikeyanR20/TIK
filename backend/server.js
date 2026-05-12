@@ -32,6 +32,7 @@ const storage = new CloudinaryStorage({
 });
 const upload = multer({ storage });
 
+// Schemas
 const candidateSchema = new mongoose.Schema({
   name: String,
   qualification: String,
@@ -57,9 +58,18 @@ const joinSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now }
 });
 
+const contactSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  message: String,
+  createdAt: { type: Date, default: Date.now }
+});
+
 const Candidate = mongoose.model("Candidate", candidateSchema);
 const JoinCandidate = mongoose.model("JoinCandidate", joinSchema);
+const Contact = mongoose.model("Contact", contactSchema);
 
+// APPLY NOW
 app.post("/upload", upload.single("resume"), async (req, res) => {
   try {
     const newCandidate = new Candidate({
@@ -90,6 +100,7 @@ app.get("/candidates", async (req, res) => {
   }
 });
 
+// JOIN US
 app.post("/join", upload.single("resume"), async (req, res) => {
   try {
     const newCandidate = new JoinCandidate({
@@ -116,6 +127,28 @@ app.get("/join-candidates", async (req, res) => {
     res.json(data);
   } catch (err) {
     res.status(500).json({ message: "Error fetching data" });
+  }
+});
+
+// CONTACT US
+app.post("/contact", async (req, res) => {
+  try {
+    const { name, email, message } = req.body;
+    const newContact = new Contact({ name, email, message });
+    await newContact.save();
+    res.json({ message: "Message sent successfully" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Error sending message" });
+  }
+});
+
+app.get("/contact-messages", async (req, res) => {
+  try {
+    const data = await Contact.find().sort({ createdAt: -1 });
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ message: "Error fetching messages" });
   }
 });
 

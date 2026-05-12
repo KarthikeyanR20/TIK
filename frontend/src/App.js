@@ -10,9 +10,10 @@ import Join_Us from "./components/Task/Join_Us"
 import Footer from "./components/Task/Footer"
 import Logo from './components/Images/Logo.png'
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
-import View_Candidates from "./components/Task/View_Candidates";
-import Apply_Now from "./components/Task/Apply_Now";
-import View_Application from "./components/Task/View_Application";
+import View_Candidates from "./components/Task/View_Candidates"
+import Apply_Now from "./components/Task/Apply_Now"
+import View_Application from "./components/Task/View_Application"
+import View_Messages from "./components/Task/View_Messages"
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -65,6 +66,7 @@ function App() {
             <Route path="/candidates" element={<View_Candidates />} />
             <Route path="/Apply_Now" element={<Apply_Now />} />
             <Route path="/application" element={<View_Application />} />
+            <Route path="/View_Messages" element={<View_Messages />} />
           </Routes>
         </div>
         <Footer />

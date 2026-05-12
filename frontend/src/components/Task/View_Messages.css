@@ -1,0 +1,39 @@
+.messages-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.messages-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #1f1f1f;
+}
+
+.message-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.message-card p {
+    font-size: 14px;
+    margin: 6px 0;
+    color: #333;
+}
+
+.no-messages {
+    text-align: center;
+    color: #999;
+    font-size: 16px;
+}
+
+@media (max-width: 480px) {
+    .message-card {
+        padding: 15px;
+    }
+}
