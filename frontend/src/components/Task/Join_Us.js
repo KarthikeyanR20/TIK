@@ -27,52 +27,54 @@ function Join_Us() {
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  const data = new FormData();
+    const data = new FormData();
 
-  data.append("name", formData.name);
-  data.append("contact", formData.phone);
-  data.append("email", formData.email);
-  data.append("qualification", formData.qualification);
-  data.append("experience", formData.experience);
-  data.append("role", formData.role);
-  data.append("location", formData.location);
-  data.append("resume", file);
+    data.append("name", formData.name);
+    data.append("contact", formData.phone);
+    data.append("email", formData.email);
+    data.append("qualification", formData.qualification);
+    data.append("experience", formData.experience);
+    data.append("role", formData.role);
+    data.append("location", formData.location);
+    data.append("referral", formData.referral);
+    data.append("resume", file);
 
-  try {
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/join`, {
-      method: "POST",
-      body: data
-    });
-
-    const result = await response.json();
-
-    if (response.ok) {
-      alert("✅ Application submitted successfully!");
-
-      setFormData({
-        name: "",
-        phone: "",
-        email: "",
-        qualification: "",
-        experience: "",
-        role: "",
-        location: ""
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/join`, {
+        method: "POST",
+        body: data
       });
 
-      setFile(null);
-      e.target.reset();
+      const result = await response.json();
 
-    } else {
-      alert("❌ Error submitting form");
+      if (response.ok) {
+        alert("✅ Application submitted successfully!");
+
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          qualification: "",
+          experience: "",
+          role: "",
+          location: "",
+          referral: ""
+        });
+
+        setFile(null);
+        e.target.reset();
+
+      } else {
+        alert("❌ Error submitting form");
+      }
+
+    } catch (error) {
+      console.error(error);
+      alert("❌ Server error");
     }
-
-  } catch (error) {
-    console.error(error);
-    alert("❌ Server error");
-  }
-};
+  };
 
   return (
     <div className='join-container'>
@@ -87,6 +89,7 @@ function Join_Us() {
         <input type="text" name="experience" placeholder="Experience" onChange={handleChange} />
         <input type="text" name="role" placeholder="Preferred Job Role" onChange={handleChange} />
         <input type="text" name="location" placeholder="Location" onChange={handleChange} />
+        <input type="text" name="referral" placeholder="Referral Number (Optional)" onChange={handleChange} />
 
         <input type="file" onChange={handleFileChange} required />
 

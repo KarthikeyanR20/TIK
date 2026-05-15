@@ -23,6 +23,7 @@ function View_Candidates() {
           <p><b>Experience:</b> {c.experience}</p>
           <p><b>Role:</b> {c.role}</p>
           <p><b>Location:</b> {c.location}</p>
+          <p><b>Referral Number:</b> {c.referral || "N/A"}</p>
           <a
             href={c.resume}
             target="_blank"
