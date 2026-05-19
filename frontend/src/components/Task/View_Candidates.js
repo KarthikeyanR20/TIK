@@ -16,13 +16,13 @@ function View_Candidates() {
       <h2 className="candidates-title">Join Us Candidates</h2>
       {candidates.map((c, index) => (
         <div key={index} className="candidate-card">
-          <p><b>Name:</b> {c.name}</p>
-          <p><b>Email:</b> {c.email}</p>
-          <p><b>Contact:</b> {c.contact}</p>
-          <p><b>Qualification:</b> {c.qualification}</p>
-          <p><b>Experience:</b> {c.experience}</p>
-          <p><b>Role:</b> {c.role}</p>
-          <p><b>Location:</b> {c.location}</p>
+          <p><b>Name:</b> {c.name || "N/A"}</p>
+          <p><b>Email:</b> {c.email || "N/A"}</p>
+          <p><b>Contact:</b> {c.contact || "N/A"}</p>
+          <p><b>Qualification:</b> {c.qualification || "N/A"}</p>
+          <p><b>Experience:</b> {c.experience || "N/A"}</p>
+          <p><b>Role:</b> {c.role || "N/A"}</p>
+          <p><b>Location:</b> {c.location || "N/A"}</p>
           <p><b>Referral Number:</b> {c.referral || "N/A"}</p>
           <a
             href={c.resume}

@@ -10,7 +10,8 @@ function Join_Us() {
     qualification: "",
     experience: "",
     role: "",
-    location: ""
+    location: "",
+    referral: ""
   });
 
   const [file, setFile] = useState(null);
@@ -82,14 +83,14 @@ function Join_Us() {
 
       <form className='form' onSubmit={handleSubmit}>
 
-        <input type="text" name="name" placeholder="Full Name" onChange={handleChange} required />
-        <input type="tel" name="phone" placeholder="Phone Number" onChange={handleChange} required />
-        <input type="email" name="email" placeholder="Email Address" onChange={handleChange} required />
-        <input type="text" name="qualification" placeholder="Qualification" onChange={handleChange} />
-        <input type="text" name="experience" placeholder="Experience" onChange={handleChange} />
-        <input type="text" name="role" placeholder="Preferred Job Role" onChange={handleChange} />
-        <input type="text" name="location" placeholder="Location" onChange={handleChange} />
-        <input type="text" name="referral" placeholder="Referral Number (Optional)" onChange={handleChange} />
+        <input type="text" name="name" value={formData.name} placeholder="Full Name" onChange={handleChange} required />
+        <input type="tel" name="phone" value={formData.phone} placeholder="Phone Number" onChange={handleChange} required />
+        <input type="email" name="email" value={formData.email} placeholder="Email Address" onChange={handleChange} required />
+        <input type="text" name="qualification" value={formData.qualification} placeholder="Qualification" onChange={handleChange} required />
+        <input type="text" name="experience" value={formData.experience} placeholder="Experience" onChange={handleChange} required />
+        <input type="text" name="role" value={formData.role} placeholder="Preferred Job Role" onChange={handleChange} required />
+        <input type="text" name="location" value={formData.location} placeholder="Location" onChange={handleChange} required />
+        <input type="text" name="referral" value={formData.referral} placeholder="Referral Number" onChange={handleChange} required />
 
         <input type="file" onChange={handleFileChange} required />
 

@@ -54,6 +54,7 @@ const joinSchema = new mongoose.Schema({
   experience: String,
   role: String,
   location: String,
+  referral: String,
   resume: String,
   createdAt: { type: Date, default: Date.now }
 });
@@ -80,7 +81,7 @@ app.post("/upload", upload.single("resume"), async (req, res) => {
       jobTitle: req.body.jobTitle,
       contact: req.body.contact,
       email: req.body.email,
-      referral: req.body.referral || "N/A",
+      referral: req.body.referral,
       resume: req.file ? req.file.path : ""
     });
     await newCandidate.save();
@@ -111,6 +112,7 @@ app.post("/join", upload.single("resume"), async (req, res) => {
       experience: req.body.experience,
       role: req.body.role,
       location: req.body.location,
+      referral: req.body.referral,
       resume: req.file ? req.file.path : ""
     });
     await newCandidate.save();
