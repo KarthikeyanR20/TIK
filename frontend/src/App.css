@@ -159,3 +159,34 @@ nav {
     font-size: 14px;
   }
 }
+
+
+/* INNER DOT */
+
+.cursor-dot{
+  width: 10px;
+  height: 10px;
+  background: #b28735;
+  border-radius: 50%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* OUTER RING */
+
+.cursor-outline{
+  width: 35px;
+  height: 35px;
+  border: 2px solid rgba(178,135,53,0.75);
+  border-radius: 50%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9998;
+}

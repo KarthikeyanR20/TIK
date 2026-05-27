@@ -14,12 +14,15 @@ import View_Candidates from "./components/Task/View_Candidates"
 import Apply_Now from "./components/Task/Apply_Now"
 import View_Application from "./components/Task/View_Application"
 import View_Messages from "./components/Task/View_Messages"
+import CustomCursor from "./components/CustomCursor";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <>
+      <CustomCursor />
+
       <Router>
         <div>
           <div className="container">
