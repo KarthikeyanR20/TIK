@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Home.css";
-import image from '../Images/TIK.png'
-import { BrowserRouter as Router, Route, Routes, Link, useNavigate } from 'react-router-dom'
+import image from '../Images/TIK.png';
+import { BrowserRouter as Router, Route, Routes, Link, useNavigate } from 'react-router-dom';
 
 function Home() {
   return (
@@ -22,6 +22,7 @@ function Home() {
         </section>
 
       </div>
+
     </>
   )
 }

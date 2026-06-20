@@ -1,19 +1,19 @@
 import "./App.css"
 import React, { useState } from 'react'
-import Home from './components/Task/Home'
-import Find_Jobs from "./components/Task/Find_Jobs"
-import Services from "./components/Task/Services"
-import About from "./components/Task/About"
-import Contact_Us from "./components/Task/Contact_Us"
-import Login from "./components/Task/Login"
-import Join_Us from "./components/Task/Join_Us"
-import Footer from "./components/Task/Footer"
+import Home from './components/Pages/Home'
+import Find_Jobs from "./components/Pages/Find_Jobs"
+import Services from "./components/Pages/Services"
+import About from "./components/Pages/About"
+import Contact_Us from "./components/Pages/Contact_Us"
+import Login from "./components/Pages/Login"
+import Join_Us from "./components/Pages/Join_Us"
+import Footer from "./components/Pages/Footer"
 import Logo from './components/Images/Logo.png'
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
-import View_Candidates from "./components/Task/View_Candidates"
-import Apply_Now from "./components/Task/Apply_Now"
-import View_Application from "./components/Task/View_Application"
-import View_Messages from "./components/Task/View_Messages"
+import View_Candidates from "./components/Pages/View_Candidates"
+import Apply_Now from "./components/Pages/Apply_Now"
+import View_Application from "./components/Pages/View_Application"
+import View_Messages from "./components/Pages/View_Messages"
 import CustomCursor from "./components/CustomCursor";
 
 function App() {

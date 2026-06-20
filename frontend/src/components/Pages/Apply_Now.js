@@ -62,7 +62,7 @@ function Apply_Now() {
                         <input name="contact" placeholder="Contact Number" required />
                         <input name="email" placeholder="Email ID" required />
                         <input name="referral" placeholder="Referral Number" />
-
+                        
                         <input type="file" name="resume" required />
 
                         <button type="submit">Submit</button>
