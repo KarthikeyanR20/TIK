@@ -31,7 +31,7 @@ function AdminDashboard() {
 
   const handleLogout = () => {
     localStorage.removeItem("adminToken");
-    navigate("/login");
+    navigate("/admin-login");
   };
 
   return (
