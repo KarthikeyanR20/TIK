@@ -5,16 +5,16 @@ import Find_Jobs from "./components/Pages/Find_Jobs"
 import Services from "./components/Pages/Services"
 import About from "./components/Pages/About"
 import Contact_Us from "./components/Pages/Contact_Us"
-import Login from "./components/Pages/Login"
 import Join_Us from "./components/Pages/Join_Us"
 import Footer from "./components/Pages/Footer"
 import Logo from './components/Images/Logo.png'
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
-import View_Candidates from "./components/Pages/View_Candidates"
 import Apply_Now from "./components/Pages/Apply_Now"
-import View_Application from "./components/Pages/View_Application"
-import View_Messages from "./components/Pages/View_Messages"
 import CustomCursor from "./components/CustomCursor";
+
+import AdminLogin from "./components/Pages/Login";
+import AdminDashboard from "./components/Pages/AdminDashboard";
+import ProtectedRoute from "./components/Pages/ProtectedRoute";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -46,13 +46,13 @@ function App() {
                 <Link to="/About" className="navigation" onClick={() => setMenuOpen(false)}>About</Link>
                 <Link to="/Contact_Us" className="navigation" onClick={() => setMenuOpen(false)}>Contact Us</Link>
                 <div className="buttons mobile-buttons">
-                  <Link to="/Login" className="login" onClick={() => setMenuOpen(false)}>Log In</Link>
+                  <Link to="/admin-login" className="login" onClick={() => setMenuOpen(false)}>Log In</Link>
                   <Link to="/Join_Us" className="join" onClick={() => setMenuOpen(false)}>Join Us</Link>
                 </div>
               </nav>
 
               <div className="buttons desktop-buttons">
-                <Link to="/Login" className="login">Log In</Link>
+                <Link to="/admin-login" className="login">Log In</Link>
                 <Link to="/Join_Us" className="join">Join Us</Link>
               </div>
             </header>
@@ -64,12 +64,18 @@ function App() {
             <Route path="/Services" element={<Services />} />
             <Route path="/About" element={<About />} />
             <Route path="/Contact_Us" element={<Contact_Us />} />
-            <Route path="/Login" element={<Login />} />
             <Route path="/Join_Us" element={<Join_Us />} />
-            <Route path="/candidates" element={<View_Candidates />} />
             <Route path="/Apply_Now" element={<Apply_Now />} />
-            <Route path="/application" element={<View_Application />} />
-            <Route path="/messages" element={<View_Messages />} />
+
+            <Route path="/admin-login" element={<AdminLogin />} />
+            <Route
+              path="/dashboard"
+              element={
+                <ProtectedRoute>
+                  <AdminDashboard />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
         </div>
         <Footer />

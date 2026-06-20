@@ -173,6 +173,10 @@
     width: 100%;
   }
 
+  .contact-form{
+    width: 95%;
+  }
+
 }
 
 @media (max-width: 576px) {
@@ -188,6 +192,10 @@
   .info-card h2,
   .contact-form-card h2 {
     font-size: 24px;
+  }
+
+   .contact-form{
+    width: 88%;
   }
 
 }
