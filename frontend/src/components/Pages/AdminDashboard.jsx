@@ -17,7 +17,7 @@ function AdminDashboard() {
     });
     if (res.status === 401 || res.status === 403) {
       localStorage.removeItem("adminToken");
-      navigate("/login");
+      navigate("/admin-login");
       return [];
     }
     return res.json();
