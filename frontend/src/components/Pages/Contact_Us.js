@@ -79,7 +79,7 @@ function Contact_Us() {
               <FaMapMarkerAlt className="icon" />
               <div>
                 <h4>Office</h4>
-                <p>Chennai, Tamil Nadu, India</p>
+                <p>242/5, Rohini Flats, Anna Nagar West Extension, Chennai-600101, Tamil Nadu, India</p>
               </div>
             </div>
 
