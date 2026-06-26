@@ -27,7 +27,7 @@
   font-family: "Poppins", sans-serif;
   background: #fff;
   outline: none;
-  transition: border 0.2s;
+  transition: 0.3s;
 }
 
 .form input:focus {
@@ -45,10 +45,35 @@
   cursor: pointer;
   margin-top: 6px;
   transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
-.form button:hover {
+.form button:hover:not(:disabled) {
   background: #000;
+}
+
+.form button:disabled {
+  background: #999;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media (max-width: 768px) {
