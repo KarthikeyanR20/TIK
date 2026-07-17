@@ -1,56 +1,100 @@
-import React from 'react'
-import './About.css'
+import React from "react";
+import "./About.css";
 
 function About() {
-    return (
-        <div className="about">
+  return (
+    <div className="about-page">
+      <div className="about">
 
-            <h2>About TIK HR Consultancy</h2>
+        <h2>About TIK HR Consultancy</h2>
 
-            <p>
-                At TIK HR Consultancy, we are dedicated to bridging the gap between talented individuals and the right career opportunities.
-                Our mission is to connect job seekers with top MNCs and growing organizations across IT, Non-IT, and BPO sectors.
-            </p>
+        <p>
+          <strong>TIK HR Consultancy</strong> is committed to connecting talented
+          individuals with rewarding career opportunities while helping
+          organizations build high-performing teams. We specialize in
+          recruitment solutions across IT, Non-IT, BPO, Banking, Finance,
+          Aviation, Healthcare, Manufacturing, and various other industries.
+        </p>
 
-            <p>
-                With hands-on experience in the international voice process and US healthcare domain, we understand what companies truly
-                look for in candidates and how job seekers can position themselves for success. This practical industry knowledge allows
-                us to provide personalized guidance, ensuring every candidate is job-ready and confident.
-            </p>
+        <p>
+          Our mission is to simplify the recruitment process by providing
+          reliable hiring solutions for employers and personalized career
+          guidance for job seekers. We believe every individual deserves the
+          right opportunity to build a successful career, and every organization
+          deserves access to the right talent.
+        </p>
 
-            <h3>What We Do</h3>
-            <ul>
-                <li>Job Placement Assistance</li>
-                <li>Career Counselling & Guidance</li>
-                <li>Resume Building Support</li>
-                <li>Interview Preparation</li>
-                <li>Bulk & Permanent Hiring for Companies</li>
-            </ul>
+        <h3>Our Services</h3>
 
-            <h3>Why Choose Us</h3>
-            <ul>
-                <li>Industry Experience in US Healthcare & BPO</li>
-                <li>Personalized Support for Every Candidate</li>
-                <li>Fast & Efficient Hiring Process</li>
-                <li>Pre-screened and Job-ready Candidates</li>
-            </ul>
+        <ul>
+          <li>Job Placement Assistance</li>
+          <li>Career Counselling & Guidance</li>
+          <li>Professional Resume Building</li>
+          <li>Interview Preparation & Mock Interviews</li>
+          <li>Training & Skill Development Programs</li>
+          <li>Permanent & Bulk Hiring Solutions</li>
+          <li>Campus Recruitment</li>
+          <li>Overseas Placement Assistance</li>
+        </ul>
 
-            <p>
-                We don’t just focus on placements — we focus on building careers. From career counselling and resume support to interview
-                preparation and job matching, we support candidates at every stage of their journey.
-            </p>
+        <h3>Why Choose TIK HR Consultancy?</h3>
 
-            <p>
-                For employers, we offer efficient and reliable hiring solutions by providing pre-screened, qualified candidates who meet
-                their business requirements. Our goal is to simplify the recruitment process and deliver the right talent at the right time.
-            </p>
+        <ul>
+          <li>Dedicated recruitment professionals.</li>
+          <li>Opportunities with leading MNCs and growing organizations.</li>
+          <li>Personalized career guidance for every candidate.</li>
+          <li>Quick and transparent recruitment process.</li>
+          <li>Well-screened and qualified candidate database.</li>
+          <li>Employer-focused hiring solutions.</li>
+          <li>Continuous support throughout the recruitment journey.</li>
+        </ul>
 
-            <p>
-                At TIK HR Consultancy, we believe in trust, transparency, and long-term success — for both candidates and companies.
-            </p>
+        <h3>For Candidates</h3>
 
-        </div>
-    )
+        <p>
+          We assist job seekers at every stage of their career journey—from
+          identifying suitable opportunities and enhancing resumes to preparing
+          for interviews and securing employment. Our goal is to improve your
+          confidence, employability, and long-term career growth.
+        </p>
+
+        <h3>For Employers</h3>
+
+        <p>
+          We partner with organizations to provide efficient recruitment
+          solutions by sourcing, screening, and delivering candidates who meet
+          their business requirements. Whether it's individual hiring or bulk
+          recruitment, we focus on quality, speed, and reliability.
+        </p>
+
+        <h3>Our Vision</h3>
+
+        <p>
+          To become one of India's most trusted recruitment and HR consultancy
+          firms by creating meaningful career opportunities and delivering
+          exceptional hiring solutions to organizations across industries.
+        </p>
+
+        <h3>Our Mission</h3>
+
+        <p>
+          To bridge the gap between talent and opportunity through ethical
+          recruitment practices, professional guidance, innovative hiring
+          solutions, and long-term partnerships with both candidates and
+          employers.
+        </p>
+
+        <p>
+          <strong>
+            At TIK HR Consultancy, we believe in trust, transparency,
+            professionalism, and long-term success—for both candidates and
+            employers.
+          </strong>
+        </p>
+
+      </div>
+    </div>
+  );
 }
 
-export default About
+export default About;
