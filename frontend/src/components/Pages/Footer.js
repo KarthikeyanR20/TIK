@@ -11,7 +11,7 @@ function Footer() {
                         <h4>Get to Know Us</h4>
                         <Link to="/About" className='link'>About Us</Link>
                         <Link to="/Find_Jobs" className='link'>Careers</Link>
-                        <Link to="/Services" className='link'>Our Services</Link>
+                        <Link to="/Services" className='link'>Contact Us</Link>
                     </div>
                     <div className='footer-column'>
                         <h4>For Candidates</h4>
@@ -26,10 +26,10 @@ function Footer() {
                         <Link to="/Services" className='link'>Staffing Solutions</Link>
                     </div>
                     <div className='footer-column'>
-                        <h4>Support</h4>
-                        <Link to="/Contact_Us" className='link'>Contact Us</Link>
-                        <Link to="/Join_Us" className='link'>FAQs</Link>
-                        <Link to="/Contact_Us" className='link'>Help Centers</Link>
+                        <h4>Legal</h4>
+                        <Link to="/terms" className='link'>Terms & Conditions</Link>
+                        <Link to="/privacyPolicy" className='link'>Privacy Policy</Link>
+                        <Link to="/refundPolicy" className='link'>Refund Policy</Link>
                     </div>
                 </div>
                 <div className='footer-divider'></div>
