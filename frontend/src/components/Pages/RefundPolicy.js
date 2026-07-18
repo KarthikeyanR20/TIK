@@ -58,7 +58,7 @@ function RefundPolicy() {
 
           <p>
             Approved refunds, if applicable, will be processed to the original
-            payment method within <strong>7–14 business days</strong>.
+            payment method within <strong>30 business days</strong>.
           </p>
         </section>
 

@@ -154,8 +154,8 @@ function PrivacyPolicy() {
                     <h2>Children's Privacy</h2>
 
                     <p>
-                        Our services are not intended for children under the age of 18
-                        without parental or guardian consent.
+                        Our services are only intended for candidates above the age of 18
+                        with parental consent.
                     </p>
                 </section>
 
