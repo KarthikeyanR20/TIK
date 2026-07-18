@@ -18,7 +18,6 @@ import ProtectedRoute from "./components/Pages/ProtectedRoute";
 
 import Terms from "./components/Pages/Terms";
 import PrivacyPolicy from "./components/Pages/PrivacyPolicy";
-import RefundPolicy from "./components/Pages/RefundPolicy"
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -82,7 +81,6 @@ function App() {
             />
             <Route path="/terms" element={<Terms />} />
             <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
-            <Route path="/refundPolicy" element={<RefundPolicy />} />
           </Routes>
         </div>
         <Footer />

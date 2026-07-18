@@ -29,7 +29,7 @@ function Footer() {
                         <h4>Legal</h4>
                         <Link to="/terms" className='link'>Terms & Conditions</Link>
                         <Link to="/privacyPolicy" className='link'>Privacy Policy</Link>
-                        <Link to="/refundPolicy" className='link'>Refund Policy</Link>
+                        <Link to="/Contact_Us" className='link'>Contact Us</Link>
                     </div>
                 </div>
                 <div className='footer-divider'></div>

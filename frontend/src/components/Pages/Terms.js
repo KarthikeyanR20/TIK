@@ -115,17 +115,6 @@ function Terms() {
                 </section>
 
                 <section>
-                    <h2>Fees and Payments</h2>
-
-                    <ul>
-                        <li>Applicable fees will be communicated before enrollment.</li>
-                        <li>Payments must be made only through approved payment methods.</li>
-                        <li>All prices are displayed in Indian Rupees (INR).</li>
-                        <li>TIK HR Consultancy reserves the right to revise pricing at any time.</li>
-                    </ul>
-                </section>
-
-                <section>
                     <h2>Candidate Responsibilities</h2>
 
                     <ul>

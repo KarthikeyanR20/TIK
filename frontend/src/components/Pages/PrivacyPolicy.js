@@ -31,7 +31,6 @@ function PrivacyPolicy() {
                         <li>Passport Details (where applicable)</li>
                         <li>Photographs</li>
                         <li>Employment Information</li>
-                        <li>Payment Details (excluding complete card or banking credentials)</li>
                         <li>IP Address</li>
                         <li>Browser Information</li>
                         <li>Device Information</li>
@@ -51,7 +50,6 @@ function PrivacyPolicy() {
                         <li>Verify eligibility</li>
                         <li>Communicate updates</li>
                         <li>Improve our services</li>
-                        <li>Process payments</li>
                         <li>Comply with legal obligations</li>
                     </ul>
                 </section>
@@ -72,19 +70,6 @@ function PrivacyPolicy() {
                     <p>
                         We do not sell, rent, or trade your personal information to third
                         parties.
-                    </p>
-                </section>
-
-                <section>
-                    <h2>Payment Security</h2>
-
-                    <p>
-                        Payments are processed through secure third-party payment gateways.
-                    </p>
-
-                    <p>
-                        TIK HR Consultancy does not store complete debit card, credit card,
-                        banking credentials, CVV, PIN, or UPI PIN information.
                     </p>
                 </section>
 
