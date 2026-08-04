@@ -19,6 +19,8 @@ import ProtectedRoute from "./components/Pages/ProtectedRoute";
 import Terms from "./components/Pages/Terms";
 import PrivacyPolicy from "./components/Pages/PrivacyPolicy";
 
+import Receipt from "./components/Pages/Receipt";
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -81,6 +83,9 @@ function App() {
             />
             <Route path="/terms" element={<Terms />} />
             <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
+
+            <Route path="/receipt" element={<Receipt />} />
+            
           </Routes>
         </div>
         <Footer />

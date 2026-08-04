@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./AdminDashboard.css";
 
+import Receipt from "./Receipt";
+
 function AdminDashboard() {
   const [activeTab, setActiveTab] = useState("candidates");
   const [candidates, setCandidates] = useState([]);
@@ -51,6 +53,9 @@ function AdminDashboard() {
         <button className={activeTab === "messages" ? "active" : ""} onClick={() => setActiveTab("messages")}>
           Messages ({messages.length})
         </button>
+        <button className={activeTab === "receipt" ? "active" : ""} onClick={() => setActiveTab("receipt")}>
+          Receipt Generator
+        </button>
       </div>
 
       {activeTab === "candidates" && (
@@ -97,6 +102,12 @@ function AdminDashboard() {
               <p><b>Message:</b> {m.message || "N/A"}</p>
             </div>
           ))}
+        </div>
+      )}
+
+      {activeTab === "receipt" && (
+        <div className="tab-content">
+          <Receipt />
         </div>
       )}
     </div>
