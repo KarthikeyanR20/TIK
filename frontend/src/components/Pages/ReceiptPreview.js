@@ -15,8 +15,6 @@ const ReceiptPreview = ({ formData, amountWords }) => {
         </div>
 
         <div className="company-details">
-          <h2>TIK HR Consultancy</h2>
-
           <p>
             242/5, Rohini Flats,
             <br />
